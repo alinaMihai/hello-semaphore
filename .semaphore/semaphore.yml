@@ -1,0 +1,25 @@
+version: v1.0
+name: Initial Pipeline
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
+blocks:
+  - name: Build service1
+    task:
+      jobs:
+        - name: 'Job #1'
+          commands:
+            - echo "building service1"
+    dependencies: []
+    run:
+      when: 'change_in(''/service1/'', { default_branch: ''main''} )'
+  - name: Build service2
+    dependencies: []
+    task:
+      jobs:
+        - name: 'Job #1'
+          commands:
+            - echo "building service2"
+    run:
+      when: 'change_in(''/service2/'', { default_branch: ''main''} )'
