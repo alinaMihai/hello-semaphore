@@ -36,7 +36,7 @@ blocks:
             - npm run build
             - cache store
     run:
-      when: change_in('/nextjs-blog')
+      when: 'change_in(''/nextjs-blog/'', { default_branch: ''main''} )'
   - name: UI Components
     dependencies: []
     task:
@@ -50,4 +50,4 @@ blocks:
             - npm run build
             - cache store
     run:
-      when: change_in('/monorepo-react-component-library')
+      when: 'change_in(''/monorepo-react-component-library/'', { default_branch: ''main''} )'
