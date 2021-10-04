@@ -33,7 +33,10 @@ blocks:
             - cd "nextjs-blog"
             - cache restore
             - npm install
+            - npm run build
             - cache store
+    run:
+      when: change_in('/nextjs-blog')
   - name: UI Components
     dependencies: []
     task:
@@ -44,4 +47,7 @@ blocks:
             - cd monorepo-react-component-library
             - cache restore
             - npm install
+            - npm run build
             - cache store
+    run:
+      when: change_in('/monorepo-react-component-library')
