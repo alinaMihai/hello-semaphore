@@ -29,6 +29,7 @@ blocks:
       jobs:
         - name: 'Job #1'
           commands:
+            - cd nextjs-blog
             - cache restore
             - npm install
             - cache store
@@ -38,6 +39,7 @@ blocks:
       jobs:
         - name: 'Job #1'
           commands:
+            - cd monorepo-react-component-library
             - cache restore
             - npm install
             - cache store
