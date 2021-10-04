@@ -9,7 +9,7 @@ const ButtonComponent: React.FC<ButtonComponentProps> = ({ theme }) => (
     data-testid="test-component"
     className={`test-component test-component-${theme}`}
   >
-    <h1 className="heading">I'm the test component</h1>
+    <h1 className="heading">I'm the test component run changes in CI</h1>
   </div>
 );
 
