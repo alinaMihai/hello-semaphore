@@ -23,3 +23,21 @@ blocks:
             - echo "building service2"
     run:
       when: 'change_in(''/service2/'', { default_branch: ''main''} )'
+  - name: Nextjs App
+    dependencies: []
+    task:
+      jobs:
+        - name: 'Job #1'
+          commands:
+            - cache restore
+            - npm install
+            - cache store
+  - name: UI Components
+    dependencies: []
+    task:
+      jobs:
+        - name: 'Job #1'
+          commands:
+            - cache restore
+            - npm install
+            - cache store
